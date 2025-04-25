@@ -10,12 +10,6 @@ RUN apk add --no-cache libffi postgresql-libs
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# ENV DEBUG=0
-# ENV DJANGO_ALLOWED_HOSTS='localhost 127.0.0.1 [::1]'
-# ENV SECRET_KEY='django-insecure-4@v1!$@#xg3&*0^2bq5j6z7h8w9z0y1z2a3b4c5d6e7f8g9h0i'
-
-# ENV DATABASE_URL='postgres://user:password@db:5432/dbname'
-
 COPY --from=builder /install /usr/local
 COPY . .
 RUN adduser -D usfachb && chown -R usfachb:usfachb /usr/src/app
