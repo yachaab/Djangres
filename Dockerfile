@@ -9,6 +9,7 @@ WORKDIR /usr/src/app
 RUN apk add --no-cache libffi postgresql-libs
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV PORT=8000
 
 COPY --from=builder /install /usr/local
 COPY . .
