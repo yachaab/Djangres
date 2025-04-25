@@ -21,4 +21,4 @@ COPY . .
 RUN adduser -D usfachb && chown -R usfachb:usfachb /usr/src/app
 USER usfachb
 EXPOSE 8000
-CMD ["gunicorn", "core.wsgi:application", "--bind", "0.0.0.0:8080", "--workers", "1"]
+CMD ["gunicorn", "core.wsgi:application", "--bind", "0.0.0.0:$PORT", "--workers", "1"]
