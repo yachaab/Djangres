@@ -10,7 +10,6 @@ services:
     plan: free
     env: python
     buildCommand: docker build -t django_api .
-    startCommand: gunicorn --bind 0.0.0.0:$PORT core.wsgi
     envVars:
       - key: DATABASE_URL
         fromDatabase:
