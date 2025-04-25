@@ -2,7 +2,7 @@ FROM python:3.13-alpine AS builder
 WORKDIR /usr/src/app
 RUN apk add --no-cache gcc libffi-dev postgresql-dev musl-dev
 COPY requirements.txt /usr/src/app/
-RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
+RUN pip install --no-cache-dir --prefix=/install -r requirements.txt --root-user-action=ignore
 
 FROM python:3.13-alpine
 WORKDIR /usr/src/app
